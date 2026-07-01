@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פאנל ניהול - WebCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Heebo', 'sans-serif'] } } }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-sans bg-gray-100 min-h-screen">
+
+<!-- ===== LOGIN SCREEN ===== -->
+<div id="login-screen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-white">
+    <div class="bg-white rounded-3xl p-8 w-full max-w-sm shadow-lg">
+        <div class="text-center mb-8">
+            <div class="text-3xl font-black text-blue-600 mb-1">WebCraft</div>
+            <div class="text-gray-400 text-sm">כניסה לפאנל ניהול</div>
+        </div>
+
+        <div id="login-error" class="hidden bg-red-50 text-red-600 text-sm rounded-xl px-4 py-2.5 mb-4 text-center">
+            סיסמה שגויה. נסה שוב.
+        </div>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">סיסמה</label>
+                <input type="password" id="admin-password" placeholder="הכנס סיסמה"
+                       class="w-full border-2 border-gray-200 rounded-xl px-4 py-3 transition">
+            </div>
+            <button onclick="login()"
+                    class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+                כניסה
+            </button>
+        </div>
+
+        <div class="mt-6 text-center">
+            <a href="../index.html" class="text-sm text-gray-400 hover:text-blue-600 transition">
+                ← חזרה לאתר
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<div id="dashboard" class="hidden min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="fixed top-0 right-0 h-full w-60 bg-white shadow-lg flex flex-col z-40">
+        <div class="p-6 border-b border-gray-100">
+            <div class="text-xl font-black text-blue-600">WebCraft</div>
+            <div class="text-xs text-gray-400 mt-0.5">פאנל ניהול</div>
+        </div>
+
+        <nav class="p-4 flex-1 space-y-1">
+            <a href="#" onclick="showSection('orders'); return false;"
+               class="nav-link active flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+               data-section="orders">
+                <i class="fa-solid fa-list-check w-4"></i> הזמנות
+            </a>
+            <a href="#" onclick="showSection('stats'); return false;"
+               class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+               data-section="stats">
+                <i class="fa-solid fa-chart-bar w-4"></i> סטטיסטיקות
+            </a>
+        </nav>
+
+        <div class="p-4 border-t border-gray-100">
+            <button onclick="logout()"
+                    class="flex items-center gap-2 text-gray-400 hover:text-red-500 transition text-sm font-medium">
+                <i class="fa-solid fa-right-from-bracket"></i> יציאה
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="mr-60 p-8">
+
+        <!-- Stats cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="text-3xl font-black text-blue-600" id="stat-total">—</div>
+                <div class="text-gray-400 text-sm mt-1">סה"כ הזמנות</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="text-3xl font-black text-yellow-500" id="stat-pending">—</div>
+                <div class="text-gray-400 text-sm mt-1">ממתינות</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="text-3xl font-black text-purple-600" id="stat-progress">—</div>
+                <div class="text-gray-400 text-sm mt-1">בעבודה</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="text-3xl font-black text-green-600" id="stat-revenue">—</div>
+                <div class="text-gray-400 text-sm mt-1">הכנסות</div>
+            </div>
+        </div>
+
+        <!-- Orders section -->
+        <div id="section-orders">
+            <div class="flex items-center justify-between mb-5">
+                <h1 class="text-2xl font-black">הזמנות</h1>
+                <select id="status-filter" onchange="renderOrders()"
+                        class="border border-gray-200 rounded-xl px-3 py-2 text-sm bg-white focus:outline-none focus:border-blue-400 transition">
+                    <option value="all">כל הסטטוסים</option>
+                    <option value="pending">ממתין</option>
+                    <option value="in-progress">בעבודה</option>
+                    <option value="completed">הושלם</option>
+                </select>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50 border-b border-gray-100">
+                            <tr>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">#</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">לקוח</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">עסק</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">תבנית</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">חבילה</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">תאריך</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap">סטטוס</th>
+                                <th class="text-right px-5 py-4 font-semibold text-gray-500 whitespace-nowrap"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody"></tbody>
+                    </table>
+                    <div id="no-orders" class="hidden text-center py-16 text-gray-300">
+                        <i class="fa-solid fa-inbox text-5xl mb-3 block"></i>
+                        <div class="text-sm">אין הזמנות עדיין</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats section -->
+        <div id="section-stats" class="hidden">
+            <h1 class="text-2xl font-black mb-5">סטטיסטיקות</h1>
+            <div class="bg-white rounded-2xl p-10 shadow-sm text-center text-gray-300">
+                <i class="fa-solid fa-chart-line text-5xl mb-3 block"></i>
+                <div class="text-sm">גרפים יתווספו בגרסה הבאה</div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<!-- ===== ORDER MODAL ===== -->
+<div id="order-modal"
+     class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-xl">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-bold">פרטי הזמנה</h2>
+            <button onclick="closeModal()" class="text-gray-300 hover:text-gray-600 transition text-2xl leading-none">&times;</button>
+        </div>
+        <div id="modal-content"></div>
+        <div class="mt-6 grid grid-cols-2 gap-3">
+            <button onclick="updateStatus('in-progress')"
+                    class="bg-blue-500 text-white py-2.5 rounded-xl font-semibold hover:bg-blue-600 transition text-sm">
+                <i class="fa-solid fa-rotate ml-1"></i> בעבודה
+            </button>
+            <button onclick="updateStatus('completed')"
+                    class="bg-green-500 text-white py-2.5 rounded-xl font-semibold hover:bg-green-600 transition text-sm">
+                <i class="fa-solid fa-check ml-1"></i> הושלם
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>

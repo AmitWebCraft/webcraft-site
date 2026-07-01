@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft - בניית אתרים מקצועית</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Heebo', 'sans-serif'] } } }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-black gradient-text">WebCraft</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium" style="color:var(--muted)">
+            <a href="#templates" class="hover:text-white transition">תבניות</a>
+            <a href="#pricing"   class="hover:text-white transition">מחיר</a>
+            <a href="#how"       class="hover:text-white transition">איך זה עובד</a>
+            <a href="#faq-section" class="hover:text-white transition">שאלות</a>
+        </div>
+        <a href="order.html" class="btn-glow px-6 py-2.5 rounded-full font-semibold text-sm">
+            הזמן עכשיו
+        </a>
+    </div>
+</nav>
+
+<!-- ===== SPLASH — WHY YOU NEED A WEBSITE ===== -->
+<section class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4 text-center pt-20">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-bg"></div>
+
+    <div class="relative z-10 max-w-2xl mx-auto w-full">
+
+        <div class="glass inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6"
+             style="color:var(--cyan)">
+            ⚡ כל יום בלי אתר עולה לך כסף
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-black mb-10 leading-tight text-white">
+            עסק בלי אתר —<br>
+            <span class="gradient-text">עסק שלא קיים</span>
+        </h1>
+
+        <!-- Cons — appear one by one -->
+        <div class="space-y-3 text-right mb-10" id="cons-list">
+            <div class="con-item glass rounded-2xl px-5 py-4 flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                     style="background:rgba(239,68,68,0.15)">
+                    <i class="fa-solid fa-xmark text-red-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">לקוחות מחפשים אותך בגוגל — ומוצאים את המתחרים</div>
+                    <div class="text-sm mt-0.5" style="color:var(--muted)">97% מהצרכנים מחפשים עסקים אונליין לפני רכישה</div>
+                </div>
+            </div>
+            <div class="con-item glass rounded-2xl px-5 py-4 flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                     style="background:rgba(239,68,68,0.15)">
+                    <i class="fa-solid fa-xmark text-red-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">עסקאות נאבדות בלילה — בזמן שאתה ישן</div>
+                    <div class="text-sm mt-0.5" style="color:var(--muted)">אתר עובד 24/7 גם כשאתה לא</div>
+                </div>
+            </div>
+            <div class="con-item glass rounded-2xl px-5 py-4 flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                     style="background:rgba(239,68,68,0.15)">
+                    <i class="fa-solid fa-xmark text-red-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">נראה פחות מקצועי ממתחרים קטנים ממך</div>
+                    <div class="text-sm mt-0.5" style="color:var(--muted)">75% מהלקוחות שופטים אמינות לפי האתר</div>
+                </div>
+            </div>
+            <div class="con-item glass rounded-2xl px-5 py-4 flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                     style="background:rgba(239,68,68,0.15)">
+                    <i class="fa-solid fa-xmark text-red-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">אתה תלוי 100% בהמלצות פה לאוזן</div>
+                    <div class="text-sm mt-0.5" style="color:var(--muted)">בלי אתר אין לך דרך לגדול מעבר לחוג הלקוחות הקיים</div>
+                </div>
+            </div>
+            <div class="con-item glass rounded-2xl px-5 py-4 flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                     style="background:rgba(239,68,68,0.15)">
+                    <i class="fa-solid fa-xmark text-red-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">המתחרים שלך כבר קיימים אונליין — ואתה לא</div>
+                    <div class="text-sm mt-0.5" style="color:var(--muted)">כל יום בלי אתר הוא יתרון שאתה נותן להם</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reveal CTA after cons load -->
+        <div id="splash-cta" style="opacity:0;transition:opacity 0.8s ease">
+            <p class="text-xl font-bold text-white mb-5">הגיע הזמן לשנות את זה.</p>
+            <a href="#hero" class="btn-glow px-10 py-4 rounded-full text-lg font-bold inline-block">
+                בוא נבנה לך אתר ↓
+            </a>
+        </div>
+    </div>
+
+    <div class="bounce-arrow">
+        <i class="fa-solid fa-chevron-down text-xl"></i>
+    </div>
+</section>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="py-28 relative overflow-hidden">
+    <div class="orb orb-1" style="opacity:0.55;top:-100px;left:-180px;"></div>
+    <div class="orb orb-2" style="opacity:0.45;bottom:-130px;right:-180px;"></div>
+    <div class="grid-bg"></div>
+
+    <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+        <div class="reveal glass inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6"
+             style="color:var(--cyan)">
+            ✨ בניית אתרים מקצועית ומהירה לעסקים
+        </div>
+
+        <h2 class="reveal text-5xl md:text-6xl font-black mb-6 leading-tight text-white">
+            אתר מקצועי לעסק שלך<br>
+            <span class="gradient-text">תוך 5 ימי עסקים</span>
+        </h2>
+
+        <p class="reveal text-lg mb-10 max-w-2xl mx-auto leading-relaxed" style="color:var(--muted)">
+            בחר תבנית, מלא פרטים, שלם — וקבל אתר מרהיב שמייצג את העסק שלך
+            בצורה הטובה ביותר.
+        </p>
+
+        <div class="reveal flex gap-4 justify-center flex-wrap">
+            <a href="#templates" class="btn-glow px-8 py-4 rounded-full text-lg font-bold">
+                בחר תבנית עכשיו
+            </a>
+            <a href="#how" class="glass px-8 py-4 rounded-full text-lg font-semibold hover:border-indigo-500/50 transition text-white">
+                איך זה עובד?
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-14 reveal">
+            <h2 class="text-4xl font-black mb-3 text-white">איך זה עובד?</h2>
+            <p class="text-lg" style="color:var(--muted)">שלושה שלבים פשוטים לאתר מקצועי</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="reveal glass rounded-2xl p-8 text-center transition-all hover:border-indigo-500/40">
+                <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-4"
+                     style="background:rgba(99,102,241,0.18);color:var(--primary)">1</div>
+                <h3 class="text-xl font-bold mb-2 text-white">בחר תבנית</h3>
+                <p style="color:var(--muted)">עיין בגלריה ובחר את התבנית שמתאימה לעסק שלך</p>
+            </div>
+            <div class="reveal glass rounded-2xl p-8 text-center transition-all hover:border-purple-500/40" style="transition-delay:.1s">
+                <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-4"
+                     style="background:rgba(168,85,247,0.18);color:var(--purple)">2</div>
+                <h3 class="text-xl font-bold mb-2 text-white">מלא פרטים</h3>
+                <p style="color:var(--muted)">שלח לנו פרטי עסק, לוגו ותוכן — ונטפל בהכל</p>
+            </div>
+            <div class="reveal glass rounded-2xl p-8 text-center transition-all hover:border-cyan-500/40" style="transition-delay:.2s">
+                <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-4"
+                     style="background:rgba(34,211,238,0.12);color:var(--cyan)">3</div>
+                <h3 class="text-xl font-bold mb-2 text-white">שלם וקבל</h3>
+                <p style="color:var(--muted)">שלם בצורה מאובטחת וקבל אתר מקצועי תוך 5 ימים</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TEMPLATES ===== -->
+<section id="templates" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-4xl font-black mb-3 text-white">גלריית תבניות</h2>
+            <p style="color:var(--muted)" class="text-lg">תבניות מקצועיות לכל סוגי העסקים</p>
+        </div>
+
+        <div class="flex gap-3 justify-center mb-10 flex-wrap reveal">
+            <button class="filter-btn active px-5 py-2 rounded-full font-semibold text-sm" data-filter="all">הכל</button>
+            <button class="filter-btn px-5 py-2 rounded-full font-semibold text-sm" data-filter="business">עסקי</button>
+            <button class="filter-btn px-5 py-2 rounded-full font-semibold text-sm" data-filter="food">מסעדות</button>
+            <button class="filter-btn px-5 py-2 rounded-full font-semibold text-sm" data-filter="shop">חנויות</button>
+            <button class="filter-btn px-5 py-2 rounded-full font-semibold text-sm" data-filter="portfolio">פורטפוליו</button>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6" id="templates-grid"></div>
+    </div>
+</section>
+
+<!-- ===== PRICING — contact for price ===== -->
+<section id="pricing" class="py-20">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-14 reveal">
+            <h2 class="text-4xl font-black mb-3 text-white">הצעת מחיר אישית</h2>
+            <p style="color:var(--muted)" class="text-lg">כל פרויקט הוא ייחודי — צרו קשר ונתאים הצעה בדיוק לצרכים שלכם</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-14">
+
+            <!-- Starter -->
+            <div class="plan-card reveal rounded-3xl p-8">
+                <div class="font-medium mb-3" style="color:var(--muted)">אתר סטארטר</div>
+                <div class="text-2xl font-black mb-6 gradient-text">צרו קשר לקבלת מחיר</div>
+                <ul class="space-y-3 mb-8 text-sm" style="color:#CBD5E1">
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> עיצוב מקצועי לפי תבנית</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> עד 5 עמודים</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> מותאם למובייל</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> אופטימיזציה לגוגל (SEO)</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> מסירה תוך 5 ימי עסקים</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> הדרכה מלאה לניהול האתר</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> תמיכה ב-30 הימים הראשונים</li>
+                </ul>
+                <a href="https://wa.me/972547487477?text=היי, אני מעוניין בחבילת אתר סטארטר"
+                   target="_blank"
+                   class="block text-center py-3.5 rounded-2xl font-bold glass hover:border-indigo-500/50 transition text-white">
+                    לקבלת מחיר →
+                </a>
+            </div>
+
+            <!-- Pro -->
+            <div class="plan-card featured reveal rounded-3xl p-8 relative" style="transition-delay:.1s">
+                <div class="absolute -top-4 right-8 px-4 py-1 rounded-full text-sm font-bold"
+                     style="background:rgba(251,191,36,0.12);color:#FCD34D;border:1px solid rgba(251,191,36,0.3)">
+                    ⭐ הכי פופולרי
+                </div>
+                <div class="font-medium mb-3" style="color:rgba(129,140,248,0.9)">אתר + תמיכה מלאה</div>
+                <div class="text-2xl font-black mb-1 gradient-text">צרו קשר לקבלת מחיר</div>
+                <div class="text-xs mb-6" style="color:var(--muted)">תשלום חד פעמי + מנוי תמיכה חודשי · התחייבות מינימום 6 חודשים</div>
+                <ul class="space-y-3 mb-8 text-sm" style="color:#CBD5E1">
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> הכל מחבילת אתר סטארטר</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> ניטור שעתי של האתר 24/7</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> תמיכה טכנית שוטפת</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> תיקון תקלות תוך שעה</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> גיבוי שבועי אוטומטי</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> עדכוני תוכן ועיצוב</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> דוח ביצועים חודשי</li>
+                </ul>
+                <a href="https://wa.me/972547487477?text=היי, אני מעוניין בחבילת אתר + תמיכה"
+                   target="_blank"
+                   class="btn-glow block text-center py-3.5 rounded-2xl font-bold">
+                    לקבלת מחיר →
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact box -->
+        <div class="reveal glass rounded-3xl p-8 text-center">
+            <p class="text-lg font-semibold text-white mb-6">מעדיפים לדבר ישירות? אנחנו זמינים</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="https://wa.me/972547487477" target="_blank"
+                   class="btn-glow flex items-center gap-3 px-6 py-3 rounded-full font-semibold">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    WhatsApp — 054-748-7477
+                </a>
+                <a href="tel:+972547487477"
+                   class="glass flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-white hover:border-indigo-400 transition">
+                    <i class="fa-solid fa-phone text-sm"></i>
+                    054-748-7477
+                </a>
+                <a href="mailto:amit@webcraftil.com"
+                   class="glass flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-white hover:border-indigo-400 transition">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                    amit@webcraftil.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq-section" class="py-20">
+    <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-14 reveal">
+            <h2 class="text-4xl font-black mb-3 text-white">שאלות נפוצות</h2>
+        </div>
+        <div class="space-y-3" id="faq-list"></div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-20 text-center relative overflow-hidden">
+    <div class="orb orb-1" style="opacity:.35;"></div>
+    <div class="orb orb-2" style="opacity:.3;"></div>
+    <div class="relative z-10 max-w-2xl mx-auto px-4 reveal">
+        <h2 class="text-4xl font-black mb-4 text-white">מוכן להתחיל?</h2>
+        <p class="text-lg mb-8" style="color:var(--muted)">הזמן עכשיו וקבל אתר מקצועי תוך 5 ימי עסקים</p>
+        <a href="order.html" class="btn-glow inline-block px-10 py-4 rounded-full text-lg font-bold mb-6">
+            הזמן את האתר שלך
+        </a>
+        <div class="text-sm" style="color:var(--muted)">
+            או התקשר ישירות:
+            <a href="tel:+972547487477" class="text-white font-bold hover:opacity-80 transition mr-1">
+                054-748-7477
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-12 text-center" style="border-top:1px solid var(--border)">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-2xl font-black gradient-text mb-3">WebCraft</div>
+        <p class="mb-5 text-sm" style="color:var(--muted)">בניית אתרים מקצועית לעסקים בישראל</p>
+        <div class="flex gap-6 justify-center text-sm flex-wrap mb-3" style="color:var(--muted)">
+            <a href="tel:+972547487477" class="hover:text-white transition flex items-center gap-1.5">
+                <i class="fa-solid fa-phone text-xs"></i> 054-748-7477
+            </a>
+            <a href="mailto:amit@webcraftil.com" class="hover:text-white transition">amit@webcraftil.com</a>
+        </div>
+        <div class="flex gap-6 justify-center text-sm flex-wrap" style="color:var(--muted)">
+            <a href="terms.html" class="hover:text-white transition">תנאי שימוש</a>
+            <a href="privacy.html" class="hover:text-white transition">מדיניות פרטיות</a>
+        </div>
+        <div class="mt-8 text-xs" style="color:rgba(100,116,139,0.4)">© 2024 WebCraft. כל הזכויות שמורות.</div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
