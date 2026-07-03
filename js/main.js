@@ -130,7 +130,7 @@ function renderTemplates(filter) {
                     </span>
                 </div>
                 <p class="text-sm mb-4" style="color:var(--muted)">${t.description}</p>
-                <a href="order.html?template=${t.id}"
+                <a href="#order" onclick="selectTemplate('${t.id}')"
                    class="block text-center py-2.5 rounded-xl font-semibold text-white transition-opacity hover:opacity-80"
                    style="background:${t.primary};">
                     בחר תבנית זו
@@ -184,10 +184,5 @@ renderTemplates('all');
 
 initReveal(); // must be called after FAQ + templates are in the DOM
 
-/* ===== SMOOTH SCROLL for anchor links ===== */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
-});
+/* Anchor links scroll smoothly via CSS (html { scroll-behavior: smooth }) —
+   no JS needed, and this way the URL hash updates normally on click. */

@@ -8,19 +8,27 @@ const templateNames = {
 };
 
 const params      = new URLSearchParams(window.location.search);
-const templateId  = params.get('template') || '';
+let   templateId  = params.get('template') || '';
 const planParam   = params.get('plan') || 'basic';
 
-// Show selected template name
-const tName = templateNames[templateId] || 'לא נבחרה עדיין';
-document.getElementById('selected-template-name').textContent = tName;
-if (!templateId) {
-    document.getElementById('template-row').classList.add('hidden');
+// Show selected template name (from a shared link like ?template=corporate)
+let tName = templateNames[templateId] || 'לא נבחרה עדיין';
+if (templateId) {
+    document.getElementById('selected-template-name').textContent = tName;
+    document.getElementById('template-row').classList.remove('hidden');
 }
 
 // Set default plan
 const defaultPlan = document.getElementById(`plan-${planParam}`);
 if (defaultPlan) defaultPlan.checked = true;
+
+// Called from a template gallery card's "בחר תבנית זו" button
+function selectTemplate(id) {
+    templateId = id;
+    tName = templateNames[id] || 'לא נבחרה עדיין';
+    document.getElementById('selected-template-name').textContent = tName;
+    document.getElementById('template-row').classList.remove('hidden');
+}
 
 function updatePlanUI() {
     document.querySelectorAll('.plan-option').forEach(el => {
@@ -88,4 +96,16 @@ function showSuccess(order) {
     document.getElementById('success-name').textContent = order.name;
     document.getElementById('success-id').textContent   = '#' + String(order.id).slice(-6);
     document.getElementById('success-email').textContent = order.email;
+}
+
+// Called from the success screen's "חזרה לאתר" button — resets the order form
+// so it's ready again if the visitor scrolls back down to place another order
+function resetOrderFlow() {
+    document.getElementById('order-form').reset();
+    document.getElementById('success-section').classList.add('hidden');
+    document.getElementById('order-section').classList.remove('hidden');
+    document.getElementById('template-row').classList.add('hidden');
+    templateId = '';
+    tName = 'לא נבחרה עדיין';
+    updatePlanUI();
 }

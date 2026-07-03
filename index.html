@@ -21,14 +21,14 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="index.html" class="text-2xl font-display gradient-text">WebCraft</a>
+        <a href="#top" class="text-2xl font-display gradient-text">WebCraft</a>
         <div class="hidden md:flex gap-8 text-sm font-medium" style="color:var(--muted)">
             <a href="#templates" class="hover:text-ink transition">תבניות</a>
             <a href="#pricing"   class="hover:text-ink transition">מחיר</a>
             <a href="#how"       class="hover:text-ink transition">איך זה עובד</a>
             <a href="#faq-section" class="hover:text-ink transition">שאלות</a>
         </div>
-        <a href="order.html" class="btn-glow px-6 py-2.5 rounded-full font-semibold text-sm">
+        <a href="#order" class="btn-glow px-6 py-2.5 rounded-full font-semibold text-sm">
             הזמן עכשיו
         </a>
     </div>
@@ -36,9 +36,11 @@
 
 <div class="page-fade">
 
+<div id="top"></div>
+
 <!-- ===== SPLASH — WHY YOU NEED A WEBSITE ===== -->
 <section class="spotlight min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4 text-center pt-20">
-    <div class="aurora"></div>
+    <canvas id="beams-canvas" class="absolute inset-0" style="z-index:0;"></canvas>
     <div class="parallax" data-speed="0.25"><div class="orb orb-1"></div></div>
     <div class="parallax" data-speed="0.15"><div class="orb orb-2"></div></div>
     <div class="parallax" data-speed="0.35"><div class="orb orb-3"></div></div>
@@ -226,13 +228,13 @@
                 <div class="font-medium mb-3" style="color:var(--muted)">אתר סטארטר</div>
                 <div class="text-2xl font-black mb-6 gradient-text">צרו קשר לקבלת מחיר</div>
                 <ul class="space-y-3 mb-8 text-sm" style="color:var(--muted)">
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> עיצוב מקצועי לפי תבנית</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> עד 5 עמודים</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> מותאם למובייל</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> אופטימיזציה לגוגל (SEO)</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> מסירה תוך 5 ימי עסקים</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> הדרכה מלאה לניהול האתר</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> תמיכה ב-30 הימים הראשונים</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> עיצוב מקצועי לפי תבנית</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> עד 5 עמודים</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> מותאם למובייל</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> אופטימיזציה לגוגל (SEO)</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> מסירה תוך 5 ימי עסקים</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> הדרכה מלאה לניהול האתר</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> תמיכה ב-30 הימים הראשונים</li>
                 </ul>
                 <a href="https://wa.me/972547487477?text=היי, אני מעוניין בחבילת אתר סטארטר"
                    target="_blank"
@@ -244,20 +246,20 @@
             <!-- Pro -->
             <div class="tilt plan-card featured reveal-rotate rounded-3xl p-8 relative" style="transition-delay:.1s">
                 <div class="absolute -top-4 right-8 px-4 py-1 rounded-full text-sm font-bold"
-                     style="background:rgba(251,191,36,0.12);color:#b45309;border:1px solid rgba(251,191,36,0.3)">
+                     style="background:rgba(251,191,36,0.12);color:#FCD34D;border:1px solid rgba(251,191,36,0.3)">
                     ⭐ הכי פופולרי
                 </div>
                 <div class="font-medium mb-3" style="color:rgba(129,140,248,0.9)">אתר + תמיכה מלאה</div>
                 <div class="text-2xl font-black mb-1 gradient-text">צרו קשר לקבלת מחיר</div>
                 <div class="text-xs mb-6" style="color:var(--muted)">תשלום חד פעמי + מנוי תמיכה חודשי · התחייבות מינימום 6 חודשים</div>
                 <ul class="space-y-3 mb-8 text-sm" style="color:var(--muted)">
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> הכל מחבילת אתר סטארטר</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> ניטור שעתי של האתר 24/7</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> תמיכה טכנית שוטפת</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> תיקון תקלות תוך שעה</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> גיבוי שבועי אוטומטי</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> עדכוני תוכן ועיצוב</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#16a34a"></i> דוח ביצועים חודשי</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> הכל מחבילת אתר סטארטר</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> ניטור שעתי של האתר 24/7</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> תמיכה טכנית שוטפת</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> תיקון תקלות תוך שעה</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> גיבוי שבועי אוטומטי</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> עדכוני תוכן ועיצוב</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-check w-4" style="color:#4ade80"></i> דוח ביצועים חודשי</li>
                 </ul>
                 <a href="https://wa.me/972547487477?text=היי, אני מעוניין בחבילת אתר + תמיכה"
                    target="_blank"
@@ -308,7 +310,7 @@
     <div class="relative z-10 max-w-2xl mx-auto px-4 reveal">
         <h2 class="text-5xl md:text-7xl font-display mb-4 tracking-tight leading-[0.95] text-ink">מוכן להתחיל?</h2>
         <p class="text-lg mb-8" style="color:var(--muted)">הזמן עכשיו וקבל אתר מקצועי תוך 5 ימי עסקים</p>
-        <a href="order.html" class="magnetic btn-glow inline-block px-10 py-4 rounded-full text-lg font-bold mb-6">
+        <a href="#order" class="magnetic btn-glow inline-block px-10 py-4 rounded-full text-lg font-bold mb-6">
             הזמן את האתר שלך
         </a>
         <div class="text-sm" style="color:var(--muted)">
@@ -316,6 +318,452 @@
             <a href="tel:+972547487477" class="text-ink font-bold hover:opacity-80 transition mr-1">
                 054-748-7477
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ORDER ===== -->
+<section id="order" class="spotlight py-24 relative overflow-hidden">
+    <div class="aurora"></div>
+    <div class="parallax" data-speed="0.15"><div class="orb orb-1" style="opacity:.3;"></div></div>
+    <div class="parallax" data-speed="0.2"><div class="orb orb-2" style="opacity:.25;"></div></div>
+    <div class="shape-3d shape-square" style="width:170px;height:170px;top:14%;right:8%;"></div>
+    <div class="particle" style="width:12px;height:12px;top:20%;left:12%;background:var(--purple);animation-delay:.4s;"></div>
+    <div class="particle" style="width:8px;height:8px;top:75%;right:14%;background:var(--cyan);animation-delay:1.6s;"></div>
+    <div class="particle" style="width:14px;height:14px;bottom:12%;left:18%;background:var(--pink);animation-delay:1s;"></div>
+
+    <div class="max-w-5xl mx-auto px-4 relative z-10">
+        <div class="text-center mb-10 reveal">
+            <h2 class="text-5xl md:text-6xl font-display mb-2 tracking-tight text-ink">הזמן את האתר שלך</h2>
+            <p style="color:var(--muted)">מלא פרטים ונחזור אליך תוך 24 שעות</p>
+        </div>
+
+        <!-- Error -->
+        <div id="form-error"
+             class="hidden rounded-2xl px-5 py-3.5 mb-6 text-center font-medium text-sm"
+             style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#f87171"></div>
+
+        <div id="order-section" class="reveal">
+        <div class="grid md:grid-cols-5 gap-8 items-start">
+
+            <!-- Form -->
+            <div class="md:col-span-3 glass rounded-3xl p-8">
+                <h3 class="text-xl font-bold mb-6 text-ink">פרטים אישיים</h3>
+                <form id="order-form" class="space-y-5" onsubmit="return false;">
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-1.5" style="color:var(--muted)">שם מלא *</label>
+                            <input name="name" type="text" required placeholder="ישראל ישראלי"
+                                   class="dark-input w-full rounded-xl px-4 py-3">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1.5" style="color:var(--muted)">טלפון *</label>
+                            <input name="phone" type="tel" required placeholder="050-0000000"
+                                   class="dark-input w-full rounded-xl px-4 py-3">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-1.5" style="color:var(--muted)">אימייל *</label>
+                        <input name="email" type="email" required placeholder="your@email.com"
+                               class="dark-input w-full rounded-xl px-4 py-3">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-1.5" style="color:var(--muted)">שם העסק *</label>
+                        <input name="business" type="text" required placeholder="שם העסק שלך"
+                               class="dark-input w-full rounded-xl px-4 py-3">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-1.5" style="color:var(--muted)">תחום עיסוק</label>
+                        <select name="field" class="dark-input w-full rounded-xl px-4 py-3"
+                                style="background:rgba(255,255,255,0.05)">
+                            <option value="" style="background:#1e1e2e">בחר תחום...</option>
+                            <option style="background:#1e1e2e">מסחר וקמעונאות</option>
+                            <option style="background:#1e1e2e">שירותים מקצועיים</option>
+                            <option style="background:#1e1e2e">מסעדות ומזון</option>
+                            <option style="background:#1e1e2e">בריאות וספורט</option>
+                            <option style="background:#1e1e2e">אופנה ויופי</option>
+                            <option style="background:#1e1e2e">נדל"ן</option>
+                            <option style="background:#1e1e2e">טכנולוגיה</option>
+                            <option style="background:#1e1e2e">אחר</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-1.5" style="color:var(--muted)">הערות נוספות</label>
+                        <textarea name="notes" rows="3"
+                                  placeholder="כל דבר שחשוב שנדע על הפרויקט שלך..."
+                                  class="dark-input w-full rounded-xl px-4 py-3 resize-none"></textarea>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="md:col-span-2">
+                <div class="glass rounded-3xl p-6 sticky top-24">
+                    <h3 class="text-xl font-bold mb-5 text-ink">סיכום הזמנה</h3>
+
+                    <!-- Template -->
+                    <div id="template-row" class="hidden mb-5 p-4 rounded-2xl"
+                         style="background:rgba(255,255,255,0.05);border:1px solid var(--border)">
+                        <div class="text-xs font-semibold mb-0.5" style="color:var(--muted)">תבנית נבחרת</div>
+                        <div class="font-bold text-ink" id="selected-template-name">—</div>
+                    </div>
+
+                    <!-- Plans -->
+                    <div class="mb-5">
+                        <div class="text-sm font-semibold mb-3" style="color:var(--muted)">בחר חבילה</div>
+                        <div class="space-y-3">
+                            <label class="plan-option flex items-start gap-3 p-4 rounded-2xl">
+                                <input type="radio" name="plan" value="basic" id="plan-basic" class="mt-1" style="accent-color:var(--primary)">
+                                <div>
+                                    <div class="font-bold text-ink">אתר סטארטר</div>
+                                    <div class="text-xs mt-0.5" style="color:var(--muted)">תשלום חד פעמי · תמיכה ל-30 יום</div>
+                                    <div class="text-sm mt-1 font-semibold gradient-text">מחיר לפי פנייה</div>
+                                </div>
+                            </label>
+                            <label class="plan-option flex items-start gap-3 p-4 rounded-2xl">
+                                <input type="radio" name="plan" value="pro" id="plan-pro" class="mt-1" style="accent-color:var(--primary)">
+                                <div>
+                                    <div class="font-bold text-ink">
+                                        אתר + תמיכה מלאה
+                                        <span class="text-xs px-2 py-0.5 rounded-full mr-1"
+                                              style="background:rgba(251,191,36,0.12);color:#FCD34D;border:1px solid rgba(251,191,36,0.3)">מומלץ</span>
+                                    </div>
+                                    <div class="text-xs mt-0.5" style="color:var(--muted)">תשלום חד פעמי + מנוי חודשי · התחייבות 6 חודשים</div>
+                                    <div class="text-sm mt-1 font-semibold gradient-text">מחיר לפי פנייה</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="pt-4 mb-5" style="border-top:1px solid var(--border)">
+                        <div class="text-sm" style="color:var(--muted)">
+                            המחיר יישלח אליך לאחר קבלת הפרטים.<br>
+                            <strong class="text-ink">עבודה תחל רק לאחר קבלת תשלום מלא.</strong>
+                        </div>
+                    </div>
+
+                    <button onclick="submitOrder()"
+                            class="magnetic btn-glow w-full py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                        שליחת הפרטים שלי
+                    </button>
+                    <div class="text-center mt-3 text-xs flex items-center justify-center gap-1.5"
+                         style="color:var(--muted)">
+                        <i class="fa-solid fa-shield-halved text-green-400"></i>
+                        הפרטים שלך מוצפנים ומאובטחים
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- ===== SUCCESS ===== -->
+        <div id="success-section" class="hidden max-w-lg mx-auto text-center">
+            <div class="glass rounded-3xl p-10">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                     style="background:rgba(16,185,129,0.15)">
+                    <i class="fa-solid fa-check text-3xl" style="color:#34d399"></i>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-black mb-3 tracking-tight text-ink">תודה <span id="success-name"></span>!</h3>
+                <p class="mb-2" style="color:var(--muted)">קיבלנו את הבקשה שלך בהצלחה.</p>
+                <p class="text-sm mb-6" style="color:var(--muted)">
+                    מספר הזמנה: <span class="font-bold text-ink" id="success-id"></span><br>
+                    נחזור אליך ל-<span class="font-bold text-ink" id="success-email"></span> תוך 24 שעות.
+                </p>
+                <div class="rounded-2xl p-4 mb-6 text-sm"
+                     style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);color:#a5b4fc">
+                    <i class="fa-solid fa-info-circle ml-1"></i>
+                    נשלח לך קישור לתשלום מאובטח במייל תוך זמן קצר.
+                </div>
+                <a href="#top" onclick="resetOrderFlow()" class="magnetic btn-glow inline-block px-8 py-3 rounded-2xl font-bold">
+                    חזרה לאתר
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRIVACY ===== -->
+<section id="privacy" class="py-20 relative overflow-hidden">
+    <div class="aurora" style="opacity:.4;"></div>
+    <div class="orb orb-1" style="opacity:.2;"></div>
+    <div class="orb orb-2" style="opacity:.15;"></div>
+    <div class="shape-3d shape-square" style="width:140px;height:140px;top:70%;left:6%;"></div>
+    <div class="particle" style="width:10px;height:10px;top:16%;right:16%;background:var(--primary);animation-delay:.6s;"></div>
+    <div class="particle" style="width:8px;height:8px;top:60%;right:8%;background:var(--pink);animation-delay:1.8s;"></div>
+
+    <div class="max-w-3xl mx-auto px-4 relative z-10">
+
+        <div class="mb-12 reveal">
+            <h2 class="text-5xl md:text-6xl font-display text-ink mb-3 tracking-tight">מדיניות פרטיות</h2>
+            <div class="text-sm glass inline-block px-4 py-1.5 rounded-full" style="color:var(--muted)">
+                עדכון אחרון: 1 ביולי 2025
+            </div>
+        </div>
+
+        <div class="terms-body reveal">
+
+            <h2><span class="section-num">1.</span> כללי</h2>
+            <p>WebCraft (להלן: "אנחנו" / "החברה") מחויבת לשמירה על פרטיות המשתמשים והלקוחות שלה. מדיניות פרטיות זו מסבירה אילו נתונים אנחנו אוספים, כיצד אנחנו משתמשים בהם, ואיך ניתן לפנות אלינו בנוגע למידע האישי שלך.</p>
+            <p>השימוש באתר ו/או בשירותים שלנו מהווה הסכמה למדיניות פרטיות זו.</p>
+
+            <h2><span class="section-num">2.</span> מידע שאנחנו אוספים</h2>
+
+            <h3>2.1 מידע שאתה מספק לנו</h3>
+            <ul>
+                <li>שם מלא, כתובת אימייל, מספר טלפון</li>
+                <li>שם העסק ופרטיו</li>
+                <li>תוכן ופרטים שנמסרים בטופס ההזמנה</li>
+                <li>תכתובות ופניות שנשלחות אלינו</li>
+            </ul>
+
+            <h3>2.2 מידע שנאסף אוטומטית</h3>
+            <ul>
+                <li>כתובת IP ומידע על הדפדפן</li>
+                <li>דפים שבוקרו ומשך הביקור</li>
+                <li>מקור ההגעה לאתר (גוגל, רשתות חברתיות וכד')</li>
+            </ul>
+
+            <h2><span class="section-num">3.</span> שימוש במידע</h2>
+            <p>המידע שנאסף משמש אותנו למטרות הבאות:</p>
+            <ul>
+                <li>מתן השירותים שהוזמנו וניהול הפרויקט</li>
+                <li>יצירת קשר בנוגע להזמנות, עדכונים ושאלות</li>
+                <li>שליחת חשבוניות וניהול תשלומים</li>
+                <li>שיפור האתר והשירותים שלנו</li>
+                <li>משלוח עדכונים שיווקיים – רק בהסכמתך המפורשת</li>
+            </ul>
+
+            <h2><span class="section-num">4.</span> שיתוף מידע עם צדדים שלישיים</h2>
+            <p>אנחנו לא מוכרים, משכירים או מעבירים את המידע האישי שלך לצדדים שלישיים, <strong>למעט</strong> במקרים הבאים:</p>
+            <ul>
+                <li><strong>ספקי שירות:</strong> חברות עיבוד תשלומים, ספקי אחסון וכלי שיווק הנדרשים למתן השירות.</li>
+                <li><strong>דרישת חוק:</strong> כאשר מתבקשים לפי פסיקת בית משפט או רשות חוקית.</li>
+                <li><strong>הגנת זכויות:</strong> כאשר נדרש להגן על הזכויות, הבטיחות או הרכוש של WebCraft.</li>
+            </ul>
+            <p>כל ספק שירות חיצוני מחויב בהסכם לשמור על סודיות המידע.</p>
+
+            <h2><span class="section-num">5.</span> עוגיות (Cookies)</h2>
+            <p>האתר עשוי לעשות שימוש בעוגיות לשיפור חוויית המשתמש ולניתוח תנועה באתר. ניתן לבטל עוגיות בהגדרות הדפדפן, אולם פעולה זו עשויה לפגוע בחלק מפונקציות האתר.</p>
+
+            <h2><span class="section-num">6.</span> אחסון ואבטחת מידע</h2>
+            <p>המידע שלך מאוחסן על גבי שרתים מאובטחים. אנחנו נוקטים באמצעי אבטחה טכניים וארגוניים סבירים להגנה על המידע מפני גישה לא מורשית, אובדן, שיבוש או גילוי.</p>
+            <p>עם זאת, אין אנחנו יכולים להבטיח אבטחה מוחלטת של מידע המועבר דרך האינטרנט.</p>
+
+            <h2><span class="section-num">7.</span> שמירת מידע</h2>
+            <p>אנחנו שומרים את המידע האישי שלך כל עוד הוא נדרש לצרכי מתן השירות ולמטרות חשבונאיות ומשפטיות, ובכל מקרה לא יותר מ-7 שנים מסיום ההתקשרות, בהתאם לדרישות החוק הישראלי.</p>
+
+            <h2><span class="section-num">8.</span> זכויותיך</h2>
+            <p>בהתאם לחוק הגנת הפרטיות הישראלי, יש לך הזכות:</p>
+            <ul>
+                <li>לעיין במידע האישי שנשמר עליך אצלנו</li>
+                <li>לבקש תיקון מידע שגוי</li>
+                <li>לבקש מחיקת המידע שלך (בכפוף לחובות חוקיות)</li>
+                <li>לבקש הפסקת שימוש במידע לצרכי שיווק</li>
+            </ul>
+            <p>לממש את זכויותיך ניתן לפנות אלינו בכתובות המפורטות בסעיף 10.</p>
+
+            <h2><span class="section-num">9.</span> פניות וקישורים לאתרים חיצוניים</h2>
+            <p>האתר עשוי להכיל קישורים לאתרים חיצוניים. WebCraft אינו אחראי למדיניות הפרטיות של אתרים אלה, ומומלץ לעיין במדיניות הפרטיות של כל אתר באופן עצמאי.</p>
+
+            <h2><span class="section-num">10.</span> יצירת קשר</h2>
+            <p>לשאלות ופניות בנוגע למדיניות פרטיות זו:</p>
+            <ul>
+                <li>טלפון: <a href="tel:+972547487477" style="color:var(--primary)">054-748-7477</a></li>
+                <li>אימייל: <a href="mailto:amit@webcraftil.com" style="color:var(--primary)">amit@webcraftil.com</a></li>
+            </ul>
+
+            <h2><span class="section-num">11.</span> עדכונים למדיניות</h2>
+            <p>WebCraft שומר לעצמו את הזכות לעדכן מדיניות פרטיות זו. שינויים מהותיים יפורסמו באתר עם ציון תאריך העדכון. המשך השימוש בשירותים לאחר פרסום השינויים מהווה הסכמה למדיניות המעודכנת.</p>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== TERMS ===== -->
+<section id="terms" class="py-20 relative overflow-hidden">
+    <div class="aurora" style="opacity:.4;"></div>
+    <div class="orb orb-1" style="opacity:.2;"></div>
+    <div class="orb orb-2" style="opacity:.15;"></div>
+    <div class="shape-3d shape-square" style="width:150px;height:150px;top:8%;left:8%;"></div>
+    <div class="particle" style="width:10px;height:10px;top:30%;right:12%;background:var(--purple);animation-delay:1.2s;"></div>
+    <div class="particle" style="width:8px;height:8px;bottom:20%;left:14%;background:var(--cyan);animation-delay:.3s;"></div>
+
+    <div class="max-w-3xl mx-auto px-4 relative z-10">
+
+        <div class="mb-12 reveal">
+            <h2 class="text-5xl md:text-6xl font-display text-ink mb-3 tracking-tight">תקנון ותנאי שימוש</h2>
+            <div class="text-sm glass inline-block px-4 py-1.5 rounded-full" style="color:var(--muted)">
+                עדכון אחרון: 1 ביולי 2025
+            </div>
+        </div>
+
+        <div class="terms-body reveal">
+
+            <h2><span class="section-num">1.</span> כללי ומבוא</h2>
+            <p>ברוכים הבאים לאתר WebCraft. אנא קראו בעיון את תקנון ותנאי השימוש המפורטים להלן טרם עשיית שימוש כלשהו בשירותים המוצעים על-ידינו.</p>
+            <p>תקנון זה מהווה הסכם משפטי מחייב בין הלקוח לבין WebCraft לגבי כל עסקה, פרויקט, שירות מתמשך וכל יצירת קשר המתבצעים באמצעות האתר או מחוצה לו.</p>
+            <p>השימוש באתר ו/או פנייה לקבלת הצעת מחיר ו/או הזמנת שירותים מכל סוג שהוא מהווה הסכמה מלאה ובלתי מסויגת לתנאי תקנון זה. אם אינך מסכים לתנאים אלה – אנא הימנע מהשימוש בשירותינו.</p>
+            <p>תקנון זה כתוב בלשון זכר מטעמי נוחות בלבד, ומתייחס לכל המינים באופן שווה.</p>
+
+            <h2><span class="section-num">2.</span> הגדרות</h2>
+            <ul>
+                <li><strong>"WebCraft"</strong> – העסק המפעיל אתר זה ומספק שירותי בניית אתרים, עיצוב UI/UX ואחסון ותחזוקה.</li>
+                <li><strong>"הלקוח"</strong> – כל אדם, עסק, חברה או גוף אחר המשתמש בשירותי WebCraft בתמורה לתשלום.</li>
+                <li><strong>"שירותים"</strong> – כל שירות המוצע על-ידי WebCraft לרבות: בניית אתרים, עיצוב UI/UX, אחסון אתרים ותחזוקה שוטפת.</li>
+                <li><strong>"פרויקט"</strong> – עבודה מוגדרת ומוסכמת מראש בין הלקוח לנותן השירות.</li>
+                <li><strong>"הסכם שירות"</strong> – מסמך מחייב נפרד שייחתם בין הצדדים בגין כל פרויקט.</li>
+                <li><strong>"תוכן"</strong> – כל מידע, טקסט, תמונה, לוגו, סרטון או כל חומר אחר שיימסר על-ידי הלקוח.</li>
+                <li><strong>"מוצר מסופק"</strong> – כל תוצר עבודה שמסופק ללקוח כגון: אתר אינטרנט, עיצוב, קובץ, קוד וכדומה.</li>
+            </ul>
+
+            <h2><span class="section-num">3.</span> השירותים המוצעים</h2>
+
+            <h3>3.1 בניית אתרים</h3>
+            <ul>
+                <li>בניית אתרי תדמית, דפי נחיתה ואתרים עסקיים.</li>
+                <li>פיתוח אתרי מסחר אלקטרוני (E-commerce).</li>
+                <li>בניית אתרים מותאמים לנייד (Responsive Design).</li>
+                <li>אינטגרציות עם מערכות צד שלישי (CRM, תשלומים, ניהול תוכן וכד').</li>
+                <li>פיתוח אתרים בטכנולוגיות מגוונות לפי הצורך ולפי הסכם מראש.</li>
+            </ul>
+
+            <h3>3.2 עיצוב UI/UX</h3>
+            <ul>
+                <li>עיצוב ממשק משתמש (UI) ל-Web ו-Mobile.</li>
+                <li>מחקר חווית משתמש (UX Research) ואפיון תהליכים.</li>
+                <li>בניית Wireframes ו-Prototypes אינטראקטיביים.</li>
+                <li>ייעוץ עיצובי לאתרים קיימים ושיפור המרות (CRO).</li>
+            </ul>
+
+            <h3>3.3 אחסון ותחזוקה</h3>
+            <ul>
+                <li>אחסון אתרים על גבי שרתים מאובטחים דרך ספקי שירות מובילים.</li>
+                <li>ניהול שם הדומיין וחידושו (לפי הסכמה מפורשת).</li>
+                <li>עדכוני תוכנה, אבטחה ותוספים.</li>
+                <li>גיבויים שוטפים של האתר.</li>
+                <li>מעקב ביצועים ופתרון תקלות.</li>
+                <li>זמני תגובה מוגדרים בהתאם לחבילת האחסון שנרכשה.</li>
+            </ul>
+
+            <h2><span class="section-num">4.</span> תהליך ההתקשרות</h2>
+
+            <h3>4.1 שלבי הפרויקט</h3>
+            <ul>
+                <li>פגישת היכרות ואפיון צרכים (ללא תשלום).</li>
+                <li>הגשת הצעת מחיר מפורטת ולוח זמנים מוצע.</li>
+                <li>חתימה על הסכם שירות ותשלום מקדמה.</li>
+                <li>שלבי עיצוב, פיתוח ובדיקות בהתאם לתוכנית.</li>
+                <li>בדיקת לקוח, משובים ותיקונים בהתאם לסבבי התיקון המוסכמים.</li>
+                <li>השקת האתר / מסירת הפרויקט ותשלום יתרת הסכום.</li>
+                <li>תמיכה ואחריות לאחר ההשקה.</li>
+            </ul>
+
+            <h3>4.2 תנאי פתיחת פרויקט – תשלום מקדמה</h3>
+            <p>העבודה על הפרויקט לא תחל בשום מקרה לפני קבלת תשלום המקדמה המלא. כל עוד לא זוכה חשבון WebCraft בפועל – לא יפתח כל קובץ עיצוב, לא ייכתב שורת קוד אחת, ולא תינתן כל שירות מקדמי מכל סוג שהוא, לרבות אפיון, תכנון או ייעוץ.</p>
+            <p>WebCraft אינו מחויב לשמור תאריכים, לשריין זמן עבודה בלוח הזמנים שלו, או לדחות לקוחות אחרים לטובת הפרויקט – עד לרגע שבו התשלום התקבל ואושר בפועל. לוח הזמנים המוסכם מתחיל להימנות אך ורק ממועד קבלת המקדמה בפועל, ולא ממועד חתימת ההסכם.</p>
+            <p>אישור העברה בנקאית, צילום מסך של עסקה, או כל אסמכתא דיגיטלית אחרת – אינם מהווים ראיה לקבלת התשלום. התשלום ייחשב כהתקבל רק עם זיכוי חשבון WebCraft בפועל.</p>
+
+            <h3>4.3 הצעת מחיר</h3>
+            <p>כל הצעת מחיר תהיה בתוקף ל-30 יום ממועד הגשתה, אלא אם נקבע אחרת בכתב. WebCraft שומר לעצמו את הזכות לשנות מחירים בהצעות עתידיות.</p>
+
+            <h3>4.4 שינויים בהיקף הפרויקט</h3>
+            <p>כל שינוי בהיקף העבודה המוסכמת לאחר תחילת הפרויקט עשוי לגרור תוספת מחיר ו/או דחייה בלוח הזמנים. שינויים כאמור יאושרו תמיד בכתב בין הצדדים לפני ביצועם.</p>
+
+            <h2><span class="section-num">5.</span> תשלומים ותמחור</h2>
+
+            <h3>5.1 מועדי תשלום</h3>
+            <p>מבנה התשלומים הסטנדרטי:</p>
+            <ul>
+                <li>50% מקדמה בחתימה על הסכם השירות.</li>
+                <li>25% עם אישור שלב העיצוב הסופי.</li>
+                <li>25% יתרה עם מסירת הפרויקט המוגמר.</li>
+            </ul>
+
+            <h3>5.2 אמצעי תשלום</h3>
+            <p>WebCraft מקבל תשלומים באמצעים הבאים: העברה בנקאית, Bit, PayBox, PayPal וכרטיסי אשראי בהתאם לאמצעים הזמינים בפועל. פרטי חשבון מופיעים בחשבונית שתישלח ללקוח.</p>
+
+            <h3>5.3 איחור בתשלום</h3>
+            <p>תשלום שלא יתקבל תוך 7 ימי עסקים ממועד פירעונו ייחשב כמאחר. WebCraft רשאי:</p>
+            <ul>
+                <li>לעצור את עבודת הפרויקט עד לקבלת התשלום.</li>
+                <li>לחייב ריבית פיגורים בשיעור של 1.5% לחודש על הסכום המאחר.</li>
+                <li>לעכב מסירת קבצים, גישות, קודות ותוצרים כלשהם.</li>
+            </ul>
+
+            <h3>5.4 ביטול והחזרות</h3>
+            <p>המקדמה אינה ניתנת להחזר לאחר תחילת עבודת הפרויקט. ביטול פרויקט לאחר תחילת עבודה יגרור חיוב בגין כל שלב שהושלם. לא יוחזרו תשלומים בגין שירותי אחסון ותחזוקה עבור תקופות שכבר חלפו.</p>
+
+            <h3>5.5 מע"מ</h3>
+            <p>כל המחירים המצוינים בהצעות המחיר אינם כוללים מע"מ, אלא אם נאמר אחרת במפורש. החשבונית תכלול מע"מ בהתאם לדרישות החוק הישראלי.</p>
+
+            <h2><span class="section-num">6.</span> אחריות הלקוח</h2>
+
+            <h3>6.1 אספקת תוכן</h3>
+            <p>הלקוח מתחייב לספק את כל החומרים הנדרשים לביצוע הפרויקט בתוך המועדים שנקבעו. עיכוב באספקת תוכן מצד הלקוח עשוי לגרום לדחייה בלוח הזמנים ללא חבות של WebCraft.</p>
+
+            <h3>6.2 אישורים ומשובים</h3>
+            <p>הלקוח מתחייב להגיב לבקשות אישור ומשוב תוך 5 ימי עסקים. אי מתן תגובה בזמן עשוי להחשב כאישור ו/או לעכב את המשך הפרויקט.</p>
+
+            <h3>6.3 בעלות על תוכן</h3>
+            <p>הלקוח מצהיר ומתחייב כי כל התוכן שמסר לנותן השירות הינו ברשותו החוקית המלאה ואינו מפר זכויות יוצרים, סימני מסחר, פרטיות או כל זכות צד שלישי אחרת. WebCraft לא ישא בכל אחריות לנזק שנגרם כתוצאה מתוכן שסיפק הלקוח.</p>
+
+            <h3>6.4 פרטי כניסה וגישה</h3>
+            <p>הלקוח אחראי לשמור על פרטי הכניסה למערכות שנמסרו לו. WebCraft אינו אחראי לנזקים הנובעים מגישה לא מורשית שנגרמה עקב רשלנות הלקוח.</p>
+
+            <h2><span class="section-num">7.</span> קניין רוחני</h2>
+
+            <h3>7.1 בעלות על המוצר המסופק</h3>
+            <p>בכפוף לתשלום מלוא התמורה, הלקוח יהא הבעלים של כל תוצרי העבודה הסופיים שנוצרו עבורו במסגרת הפרויקט. WebCraft שומר לעצמו את הזכות לעשות שימוש בכלים, בספריות קוד, בתבניות ובמרכיבים גנריים שפותחו על ידו בפרויקטים אחרים.</p>
+
+            <h3>7.2 רישיונות תוכנה וצד שלישי</h3>
+            <p>חלק מהשירותים עשויים לכלול רכיבים ממוצרי צד שלישי (תוספים, ספריות, תבניות). הלקוח מסכים לתנאי הרישיון הרלוונטיים של אותם מוצרים. WebCraft יציין בפני הלקוח כל רכיב כאמור ועלויותיו בהסכם השירות.</p>
+
+            <h3>7.3 שימוש לצורכי תיק עבודות, שיווק וקרדיט</h3>
+            <p>בעצם חתימתו על הסכם השירות ו/או אישורו בכתב, מעניק הלקוח ל-WebCraft את הזכויות הבאות, לתקופה בלתי מוגבלת וללא תמורה נוספת:</p>
+
+            <p><strong>א. קרדיט באתר הלקוח</strong></p>
+            <p>WebCraft רשאי לכלול ציון קרדיט גלוי באתר שנבנה ללקוח – לרבות משפט מסוג "נבנה על ידי WebCraft" או "Designed &amp; Built by WebCraft", בדרך כלל בתחתית האתר (Footer), עם קישור לאתר WebCraft. הלקוח מאשר את הצגת הקרדיט כחלק בלתי נפרד מהפרויקט המסופק, ולא יסירו ללא הסכמה מפורשת בכתב מ-WebCraft.</p>
+
+            <p><strong>ב. הצגת האתר בתיק העבודות ובפרסום</strong></p>
+            <p>WebCraft רשאי:</p>
+            <ul>
+                <li>לפרסם את האתר המוגמר (או חלקים ממנו, לרבות צילומי מסך והקלטות מסך) כחלק מתיק העבודות שלו.</li>
+                <li>לציין בפרופיל האישי וברשתות החברתיות (Instagram, LinkedIn, Facebook וכד') שהאתר של הלקוח נבנה על ידו.</li>
+                <li>לכלול את כתובת האתר החי של הלקוח כהפניה (Case Study) לצורך משיכת לקוחות חדשים.</li>
+                <li>לשתף את האתר בקבוצות מקצועיות, פורומים ופלטפורמות עיצוב ופיתוח.</li>
+                <li>לעשות שימוש בשם העסק של הלקוח ובלוגואו אך ורק בהקשר של הצגת הפרויקט.</li>
+            </ul>
+            <p>הלקוח מאשר כי שימוש כאמור לעיל אינו מהווה פגיעה בפרטיות, הפרת זכויות יוצרים, או כל עילת תביעה אחרת כלפי WebCraft.</p>
+            <p>אם הלקוח מעוניין כי הפרויקט יישמר בסודיות מוחלטת ו/או כי לא יוצג קרדיט באתרו – עליו לציין זאת במפורש ובכתב לפני חתימת הסכם השירות. במקרה כזה ייתכן ויחול תוספת מחיר בהתאם להסכמה מראש בין הצדדים.</p>
+
+            <h2><span class="section-num">8.</span> הגבלת אחריות</h2>
+            <p>WebCraft לא ישא בכל אחריות לנזקים ישירים, עקיפים, מקריים, מיוחדים או תוצאתיים הנובעים מהשימוש בשירותים או מאי-יכולת להשתמש בהם. האחריות הכוללת של WebCraft לא תעלה על הסכום ששילם הלקוח עבור השירות הספציפי שגרם לנזק.</p>
+            <p>WebCraft אינו אחראי לתוצאות עסקיות, הכנסות, דירוגי SEO, ביצועי מכירות או כל תוצאה עסקית אחרת הנובעת מהאתר שנבנה.</p>
+
+            <h2><span class="section-num">9.</span> סודיות</h2>
+            <p>שני הצדדים מתחייבים לשמור בסודיות כל מידע עסקי, טכני או מסחרי שיוחלף ביניהם במסגרת הפרויקט, ולא לגלותו לצד שלישי ללא הסכמה מפורשת בכתב, אלא במקרים הנדרשים על-פי חוק.</p>
+
+            <h2><span class="section-num">10.</span> דין חל וסמכות שיפוט</h2>
+            <p>תקנון זה יחול ויפורש בהתאם לדיני מדינת ישראל. כל סכסוך שיתגלע בין הצדדים בקשר עם תקנון זה יובא לדיון בפני בתי המשפט המוסמכים במחוז תל אביב-יפו, ולהם בלבד תהיה סמכות שיפוט ייחודית ובלעדית.</p>
+
+            <h2><span class="section-num">11.</span> שינויים בתקנון</h2>
+            <p>WebCraft שומר לעצמו את הזכות לעדכן תקנון זה בכל עת. שינויים מהותיים יפורסמו באתר ויכנסו לתוקף 14 יום לאחר פרסומם. המשך השימוש בשירותים לאחר מועד כניסתם לתוקף מהווה הסכמה לתנאים המעודכנים.</p>
+
+            <h2><span class="section-num">12.</span> יצירת קשר</h2>
+            <p>לשאלות, פניות וברורים בנוגע לתקנון זה:</p>
+            <ul>
+                <li>טלפון: <a href="tel:+972547487477" style="color:var(--primary)">054-748-7477</a></li>
+                <li>אימייל: <a href="mailto:amit@webcraftil.com" style="color:var(--primary)">amit@webcraftil.com</a></li>
+            </ul>
+
         </div>
     </div>
 </section>
@@ -332,8 +780,8 @@
             <a href="mailto:amit@webcraftil.com" class="hover:text-ink transition">amit@webcraftil.com</a>
         </div>
         <div class="flex gap-6 justify-center text-sm flex-wrap" style="color:var(--muted)">
-            <a href="terms.html" class="hover:text-ink transition">תנאי שימוש</a>
-            <a href="privacy.html" class="hover:text-ink transition">מדיניות פרטיות</a>
+            <a href="#terms" class="hover:text-ink transition">תנאי שימוש</a>
+            <a href="#privacy" class="hover:text-ink transition">מדיניות פרטיות</a>
         </div>
         <div class="mt-8 text-xs" style="color:rgba(100,116,139,0.4)">© 2024 WebCraft. כל הזכויות שמורות.</div>
     </div>
@@ -342,6 +790,8 @@
 </div><!-- /.page-fade -->
 
 <script src="js/effects.js"></script>
+<script src="js/beams.js"></script>
 <script src="js/main.js"></script>
+<script src="js/order.js"></script>
 </body>
 </html>
