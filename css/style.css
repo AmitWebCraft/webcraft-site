@@ -15,10 +15,14 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Rubik', sans-serif;
     background: var(--bg);
     color: var(--ink);
     overflow-x: hidden;
+}
+
+.font-display {
+    font-family: 'Secular One', sans-serif;
 }
 
 /* ===== TEXT-INK (light-theme replacement for text-white) ===== */
@@ -94,16 +98,52 @@ body {
     50%     { transform: rotate(-4deg) translateY(-25px); }
 }
 
-/* Grid overlay */
-.grid-bg {
+/* ===== AURORA (slow-rotating color wash, replaces the old grid pattern) ===== */
+.aurora {
     position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(10,10,18,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(10,10,18,0.035) 1px, transparent 1px);
-    background-size: 60px 60px;
+    inset: -30%;
+    z-index: 0;
+    pointer-events: none;
+    background: conic-gradient(from 0deg,
+        rgba(79,70,229,0.14), rgba(219,39,119,0.12), rgba(147,51,234,0.14),
+        rgba(14,116,144,0.10), rgba(79,70,229,0.14));
+    filter: blur(90px);
+    animation: auroraSpin 30s linear infinite;
+    opacity: .8;
+}
+@keyframes auroraSpin { to { transform: rotate(360deg); } }
+
+/* ===== PARTICLES (small floating dots for extra depth) ===== */
+.particle {
+    position: absolute;
+    border-radius: 50%;
     pointer-events: none;
     z-index: 0;
+    animation: particleFloat 6s ease-in-out infinite;
+}
+@keyframes particleFloat {
+    0%,100% { transform: translateY(0) scale(1); opacity: .5; }
+    50%     { transform: translateY(-35px) scale(1.15); opacity: .9; }
+}
+
+/* ===== HERO LINE-IN (staggered headline entrance) ===== */
+.hero-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(45px) rotate(-2deg);
+    animation: heroLineIn .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-line:nth-of-type(1) { animation-delay: .1s; }
+.hero-line:nth-of-type(2) { animation-delay: .32s; }
+@keyframes heroLineIn {
+    to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+/* ===== BADGE PULSE ===== */
+.badge-pulse { animation: badgePulse 2.4s ease-in-out infinite; }
+@keyframes badgePulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(79,70,229,0.22); }
+    50%     { box-shadow: 0 0 0 12px rgba(79,70,229,0); }
 }
 
 /* ===== SPOTLIGHT (cursor-follow glow, desktop only) ===== */
@@ -186,12 +226,12 @@ body {
 /* ===== SPLASH CONS ===== */
 .con-item {
     opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(.82) translateY(18px) rotate(-3deg);
+    transition: opacity 0.55s cubic-bezier(.34,1.56,.64,1), transform 0.55s cubic-bezier(.34,1.56,.64,1);
 }
 .con-item.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1) translateY(0) rotate(0);
 }
 
 /* ===== SCROLL REVEAL — variants for a livelier feel ===== */
