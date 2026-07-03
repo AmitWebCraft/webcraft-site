@@ -269,6 +269,40 @@ html.preload .page-fade {
         0 -18px 55px rgba(17,114,226,0.55);
 }
 
+/* Flipped variant — anchored to the TOP of its section instead of the bottom,
+   with the accent glow flipped to the other side. Meant to sit directly below
+   a section using .ray-glow/.ray-arc, so the two halves read as one full circle
+   straddling the seam between the two sections. */
+.ray-glow-top {
+    position: absolute;
+    left: 50%;
+    top: -35%;
+    width: 1500px;
+    height: 950px;
+    max-width: 160vw;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at center,
+        rgba(20,136,252,0.55) 0%, rgba(20,136,252,0.28) 18%,
+        rgba(20,136,252,0.12) 28%, transparent 55%);
+}
+.ray-arc-top {
+    position: absolute;
+    left: 50%;
+    top: -62%;
+    width: 900px;
+    height: 900px;
+    max-width: 150vw;
+    max-height: 150vw;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 12px solid rgba(255,255,255,0.9);
+    box-shadow:
+        0 0 0 20px rgba(183,215,246,0.55),
+        0 0 0 40px rgba(143,193,242,0.4),
+        0 0 0 60px rgba(100,172,246,0.28),
+        0 18px 55px rgba(17,114,226,0.55);
+}
+
 /* ===== ANNOUNCEMENT BADGE (glassy pill with top highlight + gradient hairline) ===== */
 .badge-glow { position: relative; overflow: hidden; }
 .badge-glow::before {
