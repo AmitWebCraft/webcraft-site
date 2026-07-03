@@ -239,14 +239,21 @@ html.preload .page-fade {
     overflow: hidden;
     pointer-events: none;
 }
+/* Positioned with bottom/top:0 + a self-relative transform (percentage of the
+   element's OWN box, not the container's) instead of a negative bottom/top
+   percentage — that had been computed against each section's height, and since
+   the splash and hero sections aren't the same height, the two arcs landed at
+   different actual sizes/offsets at the seam instead of lining up into one
+   circle. translate(±50%) centers exactly on the seam regardless of section
+   height, and still shrinks correctly together with max-width/max-height. */
 .ray-glow {
     position: absolute;
     left: 50%;
-    bottom: -35%;
+    bottom: 0;
     width: 1500px;
     height: 950px;
     max-width: 160vw;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
     background: radial-gradient(circle at center,
         rgba(20,136,252,0.55) 0%, rgba(20,136,252,0.28) 18%,
         rgba(20,136,252,0.12) 28%, transparent 55%);
@@ -254,12 +261,12 @@ html.preload .page-fade {
 .ray-arc {
     position: absolute;
     left: 50%;
-    bottom: -62%;
+    bottom: 0;
     width: 900px;
     height: 900px;
     max-width: 150vw;
     max-height: 150vw;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
     border-radius: 50%;
     border: 12px solid rgba(255,255,255,0.9);
     box-shadow:
@@ -276,11 +283,11 @@ html.preload .page-fade {
 .ray-glow-top {
     position: absolute;
     left: 50%;
-    top: -35%;
+    top: 0;
     width: 1500px;
     height: 950px;
     max-width: 160vw;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background: radial-gradient(circle at center,
         rgba(20,136,252,0.55) 0%, rgba(20,136,252,0.28) 18%,
         rgba(20,136,252,0.12) 28%, transparent 55%);
@@ -288,12 +295,12 @@ html.preload .page-fade {
 .ray-arc-top {
     position: absolute;
     left: 50%;
-    top: -62%;
+    top: 0;
     width: 900px;
     height: 900px;
     max-width: 150vw;
     max-height: 150vw;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 12px solid rgba(255,255,255,0.9);
     box-shadow:
