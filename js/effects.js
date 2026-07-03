@@ -3,6 +3,31 @@
 const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ===== PAGE TRANSITIONS (fade + slide between pages) ===== */
+/* Reveal this page (the .preload class was added inline in <head> to avoid a flash of
+   an unstyled/fully-visible page before this script runs) */
+requestAnimationFrame(() => document.documentElement.classList.remove('preload'));
+
+/* Restore visibility if the page is served from the back/forward cache mid-transition */
+window.addEventListener('pageshow', () => document.documentElement.classList.remove('preload'));
+
+if (!reduceMotion) {
+    const PAGE_TRANSITION_MS = 380;
+    document.addEventListener('click', e => {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        const link = e.target.closest('a[href]');
+        if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        if (/^https?:\/\//i.test(href) && !href.startsWith(location.origin)) return;
+
+        e.preventDefault();
+        document.documentElement.classList.add('preload');
+        setTimeout(() => { window.location.href = href; }, PAGE_TRANSITION_MS);
+    });
+}
+
 /* ===== PARALLAX ORBS / SHAPES ===== */
 if (!reduceMotion) {
     const parallaxEls = Array.from(document.querySelectorAll('.parallax[data-speed]'));
