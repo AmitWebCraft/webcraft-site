@@ -68,19 +68,19 @@ html.preload .page-fade {
 }
 .orb-1 {
     width: 650px; height: 650px;
-    background: radial-gradient(circle, rgba(99,102,241,0.35), transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
     top: -200px; left: -150px;
     animation: float1 14s ease-in-out infinite;
 }
 .orb-2 {
     width: 520px; height: 520px;
-    background: radial-gradient(circle, rgba(236,72,153,0.24), transparent 70%);
+    background: radial-gradient(circle, rgba(160,160,170,0.16), transparent 70%);
     bottom: -150px; right: -150px;
     animation: float2 18s ease-in-out infinite;
 }
 .orb-3 {
     width: 380px; height: 380px;
-    background: radial-gradient(circle, rgba(168,85,247,0.22), transparent 70%);
+    background: radial-gradient(circle, rgba(110,110,120,0.18), transparent 70%);
     top: 45%; left: 45%;
     animation: float3 11s ease-in-out infinite;
 }
@@ -138,16 +138,16 @@ html.preload .page-fade {
     filter: blur(85px);
 }
 .spotlight-left {
-    background: radial-gradient(circle, rgba(99,102,241,0.5), transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.32), transparent 70%);
     animation: spotlightLeft 12s ease-in-out infinite alternate;
 }
 .spotlight-mid {
-    background: radial-gradient(circle, rgba(236,72,153,0.4), transparent 70%);
+    background: radial-gradient(circle, rgba(160,160,170,0.30), transparent 70%);
     animation: spotlightMid 15s ease-in-out infinite alternate;
     animation-delay: -3s;
 }
 .spotlight-right {
-    background: radial-gradient(circle, rgba(168,85,247,0.42), transparent 70%);
+    background: radial-gradient(circle, rgba(90,90,100,0.36), transparent 70%);
     animation: spotlightRight 18s ease-in-out infinite alternate;
     animation-delay: -5s;
 }

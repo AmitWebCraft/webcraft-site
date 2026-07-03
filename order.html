@@ -19,7 +19,11 @@
 <body class="font-sans min-h-screen" style="background:var(--bg);color:var(--ink)">
 
 <!-- Background -->
-<canvas id="beams-canvas" style="position:fixed;inset:0;z-index:0;"></canvas>
+<div class="spotlight-bg" style="position:fixed;">
+    <div class="spotlight-blob spotlight-left"></div>
+    <div class="spotlight-blob spotlight-mid"></div>
+    <div class="spotlight-blob spotlight-right"></div>
+</div>
 <div class="parallax" data-speed="0.15" style="position:fixed;inset:0;"><div class="orb orb-1" style="opacity:.3;"></div></div>
 <div class="parallax" data-speed="0.2" style="position:fixed;inset:0;"><div class="orb orb-2" style="opacity:.25;"></div></div>
 
@@ -195,7 +199,6 @@
 </div><!-- /.page-fade -->
 
 <script src="js/effects.js"></script>
-<script src="js/beams.js"></script>
 <script src="js/order.js"></script>
 </body>
 </html>
