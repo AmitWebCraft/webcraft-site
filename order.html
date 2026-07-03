@@ -18,9 +18,14 @@
 </head>
 <body class="font-sans min-h-screen" style="background:var(--bg);color:var(--ink)">
 
-<!-- Orbs -->
+<!-- Background -->
+<div class="aurora" style="position:fixed;"></div>
 <div class="parallax" data-speed="0.15" style="position:fixed;inset:0;"><div class="orb orb-1" style="opacity:.3;"></div></div>
 <div class="parallax" data-speed="0.2" style="position:fixed;inset:0;"><div class="orb orb-2" style="opacity:.25;"></div></div>
+<div class="shape-3d shape-square" style="position:fixed;width:170px;height:170px;top:14%;right:8%;"></div>
+<div class="particle" style="position:fixed;width:12px;height:12px;top:20%;left:12%;background:var(--purple);animation-delay:.4s;"></div>
+<div class="particle" style="position:fixed;width:8px;height:8px;top:75%;right:14%;background:var(--cyan);animation-delay:1.6s;"></div>
+<div class="particle" style="position:fixed;width:14px;height:14px;bottom:12%;left:18%;background:var(--pink);animation-delay:1s;"></div>
 
 <!-- Navbar -->
 <nav class="navbar">
@@ -32,6 +37,8 @@
         </a>
     </div>
 </nav>
+
+<div class="page-fade">
 
 <!-- ===== ORDER SECTION ===== -->
 <div id="order-section" class="max-w-5xl mx-auto px-4 py-24 relative z-10">
@@ -188,6 +195,8 @@
         </a>
     </div>
 </div>
+
+</div><!-- /.page-fade -->
 
 <script src="js/effects.js"></script>
 <script src="js/order.js"></script>
