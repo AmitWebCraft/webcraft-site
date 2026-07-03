@@ -14,7 +14,7 @@ function initReveal() {
     const obs = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.reveal, .reveal-scale, .reveal-rotate').forEach(el => obs.observe(el));
 }
 
 /* ===== TEMPLATES ===== */
@@ -118,12 +118,12 @@ function renderTemplates(filter) {
     const list = filter === 'all' ? templates : templates.filter(t => t.category === filter);
 
     grid.innerHTML = list.map((t, i) => `
-        <div class="template-card rounded-2xl overflow-hidden cursor-pointer"
+        <div class="tilt template-card rounded-2xl overflow-hidden cursor-pointer"
              style="animation-delay:${i * 0.07}s">
             ${miniPreview(t)}
             <div class="p-5">
                 <div class="flex items-center justify-between mb-2">
-                    <h3 class="font-bold text-white text-lg">${t.name}</h3>
+                    <h3 class="font-bold text-ink text-lg">${t.name}</h3>
                     <span class="text-xs px-3 py-1 rounded-full font-semibold"
                           style="background:${t.secondary};color:${t.accent};border:1px solid ${t.primary}22">
                         ${t.categoryLabel}
@@ -162,13 +162,13 @@ const faqs = [
 document.getElementById('faq-list').innerHTML = faqs.map((f, i) => `
     <div class="faq-item reveal rounded-2xl overflow-hidden" style="transition-delay:${i*0.05}s">
         <button class="w-full text-right p-6 flex items-center justify-between font-semibold hover:opacity-70 transition"
-                style="color:#f1f5f9"
+                style="color:var(--ink)"
                 onclick="toggleFaq(${i})">
             <span>${f.q}</span>
             <i class="fa-solid fa-chevron-down faq-icon text-sm flex-shrink-0 mr-3 opacity-50" id="faq-icon-${i}"></i>
         </button>
         <div class="hidden px-6 pb-6 leading-relaxed text-sm" id="faq-ans-${i}"
-             style="color:#94a3b8">${f.a}</div>
+             style="color:var(--muted)">${f.a}</div>
     </div>
 `).join('');
 

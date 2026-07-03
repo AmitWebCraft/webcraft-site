@@ -14,16 +14,16 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .terms-body h2  { font-size:1.4rem; font-weight:800; color:#f1f5f9; margin:2.5rem 0 .75rem; }
-        .terms-body h3  { font-size:1.05rem; font-weight:700; color:#c7d2fe; margin:1.5rem 0 .5rem; }
-        .terms-body p   { color:#94a3b8; line-height:1.85; margin-bottom:.9rem; }
-        .terms-body ul  { color:#94a3b8; padding-right:1.5rem; margin-bottom:.9rem; list-style:disc; }
+        .terms-body h2  { font-size:1.4rem; font-weight:800; color:var(--ink); margin:2.5rem 0 .75rem; }
+        .terms-body h3  { font-size:1.05rem; font-weight:700; color:var(--primary); margin:1.5rem 0 .5rem; }
+        .terms-body p   { color:var(--muted); line-height:1.85; margin-bottom:.9rem; }
+        .terms-body ul  { color:var(--muted); padding-right:1.5rem; margin-bottom:.9rem; list-style:disc; }
         .terms-body li  { margin-bottom:.4rem; line-height:1.75; }
-        .terms-body strong { color:#e2e8f0; }
+        .terms-body strong { color:var(--ink); }
         .terms-body .section-num { color:#6366f1; font-weight:900; margin-left:.4rem; }
     </style>
 </head>
-<body class="font-sans" style="background:var(--bg);color:var(--text)">
+<body class="font-sans" style="background:var(--bg);color:var(--ink)">
 
 <!-- Fixed orbs -->
 <div class="orb orb-1" style="opacity:.2;position:fixed;"></div>
@@ -33,7 +33,7 @@
 <nav class="navbar">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="index.html" class="text-2xl font-black gradient-text">WebCraft</a>
-        <a href="index.html" class="text-sm font-medium transition hover:text-white" style="color:var(--muted)">
+        <a href="index.html" class="text-sm font-medium transition hover:text-ink" style="color:var(--muted)">
             ← חזרה לאתר
         </a>
     </div>
@@ -43,7 +43,7 @@
 
     <!-- Header -->
     <div class="mb-12">
-        <h1 class="text-4xl font-black text-white mb-3">תקנון ותנאי שימוש</h1>
+        <h1 class="text-5xl md:text-6xl font-black text-ink mb-3 tracking-tight">תקנון ותנאי שימוש</h1>
         <div class="text-sm glass inline-block px-4 py-1.5 rounded-full" style="color:var(--muted)">
             עדכון אחרון: 1 ביולי 2025
         </div>
@@ -216,11 +216,12 @@
     <div class="max-w-6xl mx-auto px-4">
         <a href="index.html" class="text-xl font-black gradient-text">WebCraft</a>
         <div class="flex gap-6 justify-center text-sm mt-4 flex-wrap" style="color:var(--muted)">
-            <a href="terms.html" class="hover:text-white transition">תנאי שימוש</a>
-            <a href="privacy.html" class="hover:text-white transition">מדיניות פרטיות</a>
+            <a href="terms.html" class="hover:text-ink transition">תנאי שימוש</a>
+            <a href="privacy.html" class="hover:text-ink transition">מדיניות פרטיות</a>
         </div>
     </div>
 </footer>
 
+<script src="js/effects.js"></script>
 </body>
 </html>
