@@ -8,7 +8,7 @@ html { scroll-behavior: smooth; }
     --border:  rgba(255,255,255,0.09);
     --primary: #6366f1;
     --cyan:    #22d3ee;
-    --purple:  #a855f7;
+    --purple:  #4da5fc;
     --pink:    #ec4899;
     --ink:     #f1f5f9;
     --muted:   #94a3b8;
@@ -327,7 +327,7 @@ html.preload .page-fade {
     transform: translateX(-50%);
     width: 100px; height: 2px;
     background: linear-gradient(90deg, transparent, rgba(37,119,255,0.8) 20%,
-        rgba(126,93,225,0.8) 50%, rgba(59,130,246,0.8) 80%, transparent);
+        rgba(77,165,252,0.8) 50%, rgba(59,130,246,0.8) 80%, transparent);
     filter: blur(0.5px);
     pointer-events: none;
 }
@@ -336,11 +336,13 @@ html.preload .page-fade {
 .btn-glow {
     background: linear-gradient(135deg, var(--primary), var(--purple));
     color: white;
+    font-family: 'Secular One', sans-serif;
+    font-style: italic;
     position: relative;
     transition: all 0.3s;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 35px rgba(79,70,229,0.28);
+    box-shadow: 0 10px 35px rgba(77,165,252,0.3);
 }
 .btn-glow::after {
     content: '';
@@ -354,7 +356,7 @@ html.preload .page-fade {
     z-index: -1;
 }
 .btn-glow:hover::after { opacity: 0.6; }
-.btn-glow:hover { transform: translateY(-2px); box-shadow: 0 16px 45px rgba(79,70,229,0.4); }
+.btn-glow:hover { transform: translateY(-2px); box-shadow: 0 16px 45px rgba(77,165,252,0.45); }
 
 /* ===== MAGNETIC (JS-driven translate toward cursor) ===== */
 .magnetic { transition: transform .25s cubic-bezier(.2,1,.3,1); display: inline-block; }
