@@ -216,7 +216,7 @@ html.preload .page-fade {
 
 /* ===== GRADIENT TEXT ===== */
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary), var(--purple), var(--pink));
+    background: linear-gradient(135deg, #ffffff, #b0b0b8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
