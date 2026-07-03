@@ -222,6 +222,75 @@ html.preload .page-fade {
     background-clip: text;
 }
 
+/* Accent word treatment for the landing headline — blue-to-white, italic */
+.gradient-text-accent {
+    background: linear-gradient(180deg, #4da5fc, #4da5fc, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+}
+
+/* ===== RAY BACKGROUND (glowing horizon-arc effect for the landing section) ===== */
+.ray-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.ray-glow {
+    position: absolute;
+    left: 50%;
+    bottom: -35%;
+    width: 1500px;
+    height: 950px;
+    max-width: 160vw;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at center,
+        rgba(20,136,252,0.55) 0%, rgba(20,136,252,0.28) 18%,
+        rgba(20,136,252,0.12) 28%, transparent 55%);
+}
+.ray-arc {
+    position: absolute;
+    left: 50%;
+    bottom: -62%;
+    width: 900px;
+    height: 900px;
+    max-width: 150vw;
+    max-height: 150vw;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 12px solid rgba(255,255,255,0.9);
+    box-shadow:
+        0 0 0 20px rgba(183,215,246,0.55),
+        0 0 0 40px rgba(143,193,242,0.4),
+        0 0 0 60px rgba(100,172,246,0.28),
+        0 -18px 55px rgba(17,114,226,0.55);
+}
+
+/* ===== ANNOUNCEMENT BADGE (glassy pill with top highlight + gradient hairline) ===== */
+.badge-glow { position: relative; overflow: hidden; }
+.badge-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 50% 0;
+    background: radial-gradient(ellipse at center top, rgba(255,255,255,0.18), transparent 70%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+.badge-glow::after {
+    content: '';
+    position: absolute;
+    top: -1px; left: 50%;
+    transform: translateX(-50%);
+    width: 100px; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(37,119,255,0.8) 20%,
+        rgba(126,93,225,0.8) 50%, rgba(59,130,246,0.8) 80%, transparent);
+    filter: blur(0.5px);
+    pointer-events: none;
+}
+
 /* ===== GLOW BUTTON ===== */
 .btn-glow {
     background: linear-gradient(135deg, var(--primary), var(--purple));
