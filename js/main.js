@@ -130,7 +130,7 @@ function renderTemplates(filter) {
                     </span>
                 </div>
                 <p class="text-sm mb-4" style="color:var(--muted)">${t.description}</p>
-                <a href="#order" onclick="selectTemplate('${t.id}')"
+                <a href="order.html?template=${t.id}"
                    class="block text-center py-2.5 rounded-xl font-semibold text-white transition-opacity hover:opacity-80"
                    style="background:${t.primary};">
                     בחר תבנית זו

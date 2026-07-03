@@ -12,7 +12,10 @@
     canvas.style.filter = 'blur(22px)';
 
     const ctx = canvas.getContext('2d');
-    const section = canvas.closest('section') || canvas.parentElement;
+    // If the canvas lives inside a <section> (a viewport-sized content block), size
+    // to that. Otherwise (e.g. a fixed full-page background with no such wrapper)
+    // fall back to the window itself.
+    const container = canvas.closest('section');
     const MINIMUM_BEAMS = 14;
     let beams = [];
     let running = false;
@@ -68,8 +71,8 @@
 
     function updateCanvasSize() {
         const dpr = Math.min(window.devicePixelRatio || 1, 2); // cap DPR — 3x on some phones is wasteful here
-        width = section.clientWidth;
-        height = section.clientHeight;
+        width = container ? container.clientWidth : window.innerWidth;
+        height = container ? container.clientHeight : window.innerHeight;
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         canvas.style.width = width + 'px';
@@ -107,11 +110,19 @@
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
-    // Only animate while the section is actually visible — this runs forever
-    // otherwise, and canvas redraws add up even when scrolled far away.
-    const observer = new IntersectionObserver(
-        entries => entries.forEach(e => (e.isIntersecting ? start() : stop())),
-        { threshold: 0 }
-    );
-    observer.observe(section);
+    if (container) {
+        // Only animate while the section is actually visible — this runs forever
+        // otherwise, and canvas redraws add up even when scrolled far away.
+        const observer = new IntersectionObserver(
+            entries => entries.forEach(e => (e.isIntersecting ? start() : stop())),
+            { threshold: 0 }
+        );
+        observer.observe(container);
+    } else {
+        // Fixed full-page background — just pause when the tab isn't visible.
+        document.addEventListener('visibilitychange', () => {
+            document.hidden ? stop() : start();
+        });
+        start();
+    }
 })();

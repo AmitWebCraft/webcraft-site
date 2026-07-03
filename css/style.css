@@ -103,26 +103,7 @@ html.preload .page-fade {
     50%     { transform: translate(-50%,-50%) scale(1.25); }
 }
 
-/* ===== BOLD 3D SHAPES (decorative rotated blocks) ===== */
-.shape-3d {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-    border-radius: 2.5rem;
-    filter: blur(1px);
-}
-.shape-square {
-    background: linear-gradient(135deg, rgba(99,102,241,0.18), rgba(236,72,153,0.14));
-    border: 1px solid rgba(255,255,255,0.12);
-    transform: rotate(-12deg);
-    animation: shapeSpin 20s ease-in-out infinite;
-}
-@keyframes shapeSpin {
-    0%,100% { transform: rotate(-12deg) translateY(0); }
-    50%     { transform: rotate(-4deg) translateY(-25px); }
-}
-
-/* ===== AURORA (slow-rotating color wash, replaces the old grid pattern) ===== */
+/* ===== AURORA (slow-rotating color wash) ===== */
 .aurora {
     position: absolute;
     inset: -30%;
@@ -137,17 +118,56 @@ html.preload .page-fade {
 }
 @keyframes auroraSpin { to { transform: rotate(360deg); } }
 
-/* ===== PARTICLES (small floating dots for extra depth) ===== */
-.particle {
+/* ===== SPOTLIGHT BACKGROUND (vanilla-CSS port of a moving-blob effect —
+   three large blurred glows drifting/rotating independently) ===== */
+.spotlight-bg {
     position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
+    inset: 0;
     z-index: 0;
-    animation: particleFloat 6s ease-in-out infinite;
+    overflow: hidden;
+    pointer-events: none;
 }
-@keyframes particleFloat {
-    0%,100% { transform: translateY(0) scale(1); opacity: .5; }
-    50%     { transform: translateY(-35px) scale(1.15); opacity: .9; }
+.spotlight-blob {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 65vw;
+    height: 65vw;
+    max-width: 900px;
+    max-height: 900px;
+    border-radius: 50%;
+    filter: blur(85px);
+}
+.spotlight-left {
+    background: radial-gradient(circle, rgba(99,102,241,0.5), transparent 70%);
+    animation: spotlightLeft 12s ease-in-out infinite alternate;
+}
+.spotlight-mid {
+    background: radial-gradient(circle, rgba(236,72,153,0.4), transparent 70%);
+    animation: spotlightMid 15s ease-in-out infinite alternate;
+    animation-delay: -3s;
+}
+.spotlight-right {
+    background: radial-gradient(circle, rgba(168,85,247,0.42), transparent 70%);
+    animation: spotlightRight 18s ease-in-out infinite alternate;
+    animation-delay: -5s;
+}
+@keyframes spotlightLeft {
+    0%   { transform: translate(-50%,-50%) rotate(0deg); }
+    33%  { transform: translate(-30%,-70%) rotate(15deg); }
+    66%  { transform: translate(-70%,-30%) rotate(-15deg); }
+    100% { transform: translate(-50%,-50%) rotate(0deg); }
+}
+@keyframes spotlightMid {
+    0%   { transform: translate(-50%,-50%) rotate(-20deg); }
+    33%  { transform: translate(-30%,-20%) rotate(0deg); }
+    66%  { transform: translate(-70%,-40%) rotate(20deg); }
+    100% { transform: translate(-50%,-50%) rotate(-20deg); }
+}
+@keyframes spotlightRight {
+    0%   { transform: translate(-50%,-50%) rotate(10deg); }
+    33%  { transform: translate(-80%,-70%) rotate(-10deg); }
+    66%  { transform: translate(-40%,-30%) rotate(25deg); }
+    100% { transform: translate(-50%,-50%) rotate(10deg); }
 }
 
 /* ===== HERO LINE-IN (staggered headline entrance) ===== */
